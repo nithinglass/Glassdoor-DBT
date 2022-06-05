@@ -1,0 +1,14 @@
+version: 2 
+models: 
+  - name: metric_transformation
+    tests: 
+      - dbt_utils.equality:
+          compare_model: ref('slack_users_expected')
+    columns:
+        - name: ytd_sum
+          tests : 
+              - dbt_expectations.expect_column_values_to_be_within_n_stdevs:
+                  group_by: period
+                  sigma_threshold: 3
+              - dbt_expectations.expect_column_values_to_be_within_n_moving_stdevs:
+                  date_column_name: period
