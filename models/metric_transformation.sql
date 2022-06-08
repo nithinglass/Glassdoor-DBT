@@ -1,16 +1,4 @@
-select
-
-  period,
-  has_messaged,
-  slack_joiners,
-  ytd_sum,
-  max_for_month,
-  pop_1mth,
-  ratio_to_1_month_ago,
-  trunc(avg_3mth, 3) as avg_3mth, -- different databases return this ratio differently
-  rolling_sum_3_month
-
-from 
+select * from 
 {{ metrics.metric(
     metric_name="slack_joiners", 
     grain='month', 
