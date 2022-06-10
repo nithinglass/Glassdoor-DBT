@@ -7,6 +7,17 @@ models:
     columns:
         - name: ytd_sum
           tests : 
+              - dbt_expectations.expect_column_values_to_be_within_n_moving_stdevs:
+                  date_column_name: date
+                  period: day
+                  lookback_periods: 1
+                  trend_periods: 7 
+                  test_periods: 14 
+                  sigma_threshold: 3 
+                  take_logs: true 
+                  sigma_threshold_upper: x 
+                  sigma_threshold_lower: y 
+                  take_diffs: true 
               - dbt_expectations.expect_column_values_to_be_within_n_stdevs:
                   group_by: period
                   sigma_threshold: 3
