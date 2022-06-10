@@ -1,8 +1,8 @@
 select * from 
 {{ metrics.metric(
-    metric_name="slack_joiners", 
+    metric_name="content_submissions", 
     grain='month', 
-    dimensions=['has_messaged'], 
+    dimensions=['tld'], 
     secondary_calculations=[
       {"calculation": "period_over_period", "interval": 1, "comparison_strategy": "difference", "alias": "pop_1mth"},
       {"calculation": "period_over_period", "interval": 1, "comparison_strategy": "ratio"},

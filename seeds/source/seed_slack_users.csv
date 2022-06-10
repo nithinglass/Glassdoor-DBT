@@ -1,5 +1,9 @@
-user_id,joined_at,is_active_past_quarter,has_messaged
-1,2021-01-01 14:18:27,true,true
-2,2021-02-03 17:18:55,false,true
-3,2021-04-01 11:01:28,false,false
-4,2021-04-08 22:43:09,false,false
+period,has_messaged,slack_joiners,ytd_sum,max_for_month,pop_1mth,ratio_to_1_month_ago,avg_3mth,rolling_sum_3_month
+2021-01-01,FALSE,0,0,0,0,,0.000,0
+2021-01-01,TRUE,1,1,1,1,,0.333,1
+2021-02-01,FALSE,0,0,0,0,,0.000,0
+2021-02-01,TRUE,1,2,1,0,1,0.666,2
+2021-03-01,FALSE,0,0,0,0,,0.000,0
+2021-03-01,TRUE,0,2,0,-1,0,0.666,2
+2021-04-01,FALSE,2,2,2,2,,0.666,2
+2021-04-01,TRUE,0,2,0,0,,0.333,1       

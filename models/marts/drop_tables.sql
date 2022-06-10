@@ -1,6 +1,6 @@
 {% set relations_to_drop = dbt_utils.get_relations_by_pattern(
     schema_pattern='dbt_nthakur',
-    table_pattern='%'
+    table_pattern='*'
 ) %}
 
 {% set sql_to_execute = [] %}
